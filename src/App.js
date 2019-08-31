@@ -4,11 +4,13 @@ import './App.css';
 
 const LengthCtrl = props => {
   return (
-    <div>
-      <div>{props.type} length</div>
-      <button id="sub" onClick={() => {props.handleChangeLng("-", props.type);}}>-</button>
-      <div>{props.length}</div>
-      <button id="add" onClick={() => {props.handleChangeLng("+", props.type);}}>+</button> 
+    <div class="length-ctrl">
+      <h3>{props.type} length</h3>
+      <div class="ctrl">
+        <button id="sub" onClick={() => {props.handleChangeLng("-", props.type);}}>-</button>
+        <div>{props.length}</div>
+        <button id="add" onClick={() => {props.handleChangeLng("+", props.type);}}>+</button> 
+      </div>
     </div>
   );
 };
@@ -94,16 +96,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div>my first pomodoro clock</div>
+        <h1>pomodoro clock</h1>
+        <div id="countdown">
+          <h2>{this.state.session ? "session" : "break"}</h2>
+          <div class="counting">{Math.floor(this.state.timeLeft/60)}:{this.formatMinutes(this.state.timeLeft%60)}</div>
+          <button onClick={this.handleStartStop}>{this.state.running ? "pause" : "run"}</button>
+          <button onClick={this.reset}>reset</button>
+        </div>
         <LengthCtrl type="session" length={this.state.sessionLng} handleChangeLng={this.handleChangeLng}/>
         <LengthCtrl type="break" length={this.state.breakLng} handleChangeLng={this.handleChangeLng}/>
-        <div>{this.state.session ? "session" : "break"}</div>
-        <div>
-          {Math.floor(this.state.timeLeft/60)}:
-          {this.formatMinutes(this.state.timeLeft%60)}
-        </div>
-        <button onClick={this.handleStartStop}>{this.state.running ? "pause" : "run"}</button>
-        <button onClick={this.reset}>reset</button>
       </div>
     );
   }  

@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffa0a0;
+    text-align: center;
+    font-family: 'Consolas';
+}
+
+.container {
+    margin: 0 auto;
+    padding: 10px;
+    width: 40vw;
+    background-color: #fff;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    box-shadow: .2em .2em #ff8a8a;
+}
+
+button {
+    background-color: rgb(197, 169, 169);
+    border: none;
+    border-radius: .2em;
+    color: white;
+    padding: .3em .7em;
+    display: inline-block;
+    font-family: 'Consolas';
+    cursor: pointer;
+    box-shadow: 0 .2em #999;
+}  
+
+button:hover {
+    background-color: rgb(194, 143, 143);
+}
+
+button:active {
+    background-color: rgb(194, 143, 143);
+    box-shadow: 0 .1em #666;
+    transform: translateY(.1em);
+}
+
+.length-ctrl {
+    display: inline-block;
+    width: 20vw;
+}
+
+.ctrl button{
+    display: inline-block;
+    margin: 1em;
+}
+
+.ctrl div {
+    display: inline-block;
+}
+
+.counting {
+    font-size: 4em;
+    margin: .20em;
+}
+
+#countdown button {
+    display: inline-block;
+    margin: .5em;
+}
